@@ -200,7 +200,7 @@ class MultiImageMixDataset:
     mosaic and mixup. For the augmentation pipeline of mixed image data,
     the `get_indexes` method needs to be provided to obtain the image
     indexes, and you can set `skip_flags` to change the pipeline running
-    process. 
+    process.
     Args:
         dataset (:obj:`CustomDataset`): The dataset to be mixed.
         pipeline (Sequence[dict]): Sequence of transform object or
@@ -209,10 +209,7 @@ class MultiImageMixDataset:
             be skip pipeline. Default to None.
     """
 
-    def __init__(self,
-                 dataset,
-                 pipeline,
-                 skip_type_keys=None):
+    def __init__(self, dataset, pipeline, skip_type_keys=None):
         assert isinstance(pipeline, collections.abc.Sequence)
         if skip_type_keys is not None:
             assert all([
